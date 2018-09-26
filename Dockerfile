@@ -1,9 +1,13 @@
 FROM python:3.5
 
+ENV http_proxy=http://sproxy-de.corp.vattenfall.com:8086
+ENV https_proxy=http://sproxy-de.corp.vattenfall.com:8086
+ENV no_proxy=127.0.0.1
 ENV DEBIAN_FRONTEND noninteractive
 
 # Add non-free packages, needed for snmp-mibs-downloader
 RUN sed -i -e 's/main/main non-free contrib/g' /etc/apt/sources.list
+COPY apt.conf /etc/apt/apt.conf
 
 # Install dependencies
 RUN apt-get update -y -qq && apt-get install -y -qq \
