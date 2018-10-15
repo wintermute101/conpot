@@ -40,6 +40,8 @@ RUN python3.5 setup.py install --user --prefix=
 USER root
 WORKDIR /
 RUN rm -rf /opt/conpot /tmp/* /var/tmp/*
+RUN mkdir -p /etc/conpot /var/log/conpot /usr/share/wireshark && \
+    wget https://github.com/wireshark/wireshark/raw/master/manuf -o /usr/share/wireshark/manuf
 
 # Create directories
 RUN mkdir -p /var/log/conpot/
@@ -48,6 +50,8 @@ RUN chown conpot:conpot /var/log/conpot
 RUN chown conpot:conpot -R /data
 
 # Clean
+RUN apt-get autoremove --purge
+RUN apt-get purge -y x11-common git wget build-essential gcc g++
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
 
