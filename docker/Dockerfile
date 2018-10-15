@@ -13,7 +13,6 @@ COPY apt.conf /etc/apt/apt.conf
 RUN apt-get update -y -qq && apt-get install -y -qq \
         default-libmysqlclient-dev \
         ipmitool \
-        supervisor \
         tcpdump \
         libxslt1-dev && \
     apt-get clean && \
