@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stretch as conpot-builder
 
 ENV http_proxy=http://sproxy-de.corp.vattenfall.com:8086
 ENV https_proxy=http://sproxy-de.corp.vattenfall.com:8086
