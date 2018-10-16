@@ -53,6 +53,11 @@ ENV DEBIAN_FRONTEND noninteractive
 USER root
 RUN sed -i -e 's/main/main non-free contrib/g' /etc/apt/sources.list
 
+ENV http_proxy=http://sproxy-de.corp.vattenfall.com:8086
+ENV https_proxy=http://sproxy-de.corp.vattenfall.com:8086
+ENV no_proxy=127.0.0.1
+COPY apt.conf /etc/apt/apt.conf
+
 WORKDIR /home/conpot
 
 RUN apt-get update -y -qq && apt-get install --no-install-recommends -y -qq \
