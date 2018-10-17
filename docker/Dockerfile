@@ -18,10 +18,7 @@ RUN apt-get update -y -qq && apt-get install --no-install-recommends -y -qq \
         python3 \
         python3-dev \
         python3-setuptools \
-        build-essential \
-        python3-scapy \
-        python3-cffi \
-        wget &&\
+        build-essential &&\
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -65,8 +62,6 @@ RUN apt-get update -y -qq && apt-get install --no-install-recommends -y -qq \
         ca-certificates \
         tcpdump \
         python3 \
-        python3-scapy \
-        python3-cffi \
         wget &&\
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

@@ -18,9 +18,9 @@ The build of the documentations [source](https://github.com/mushorg/conpot/tree/
 
 ## Easy install using Docker
 
-![Docker Build Status](https://img.shields.io/docker/build/honeynet/conpot.svg)
-![Docket Image Size](https://img.shields.io/microbadger/image-size/honeynet/conpot.svg?style=flat-square)
-![Docker Pulls](https://img.shields.io/docker/pulls/honeynet/conpot.svg?style=flat-square)
+[![Docker Build Status](https://img.shields.io/docker/build/honeynet/conpot.svg)](https://hub.docker.com/r/honeynet/conpot)
+[![Docket Image Size](https://img.shields.io/microbadger/image-size/honeynet/conpot.svg)](https://hub.docker.com/r/honeynet/conpot)
+[![Docker Pulls](https://img.shields.io/docker/pulls/honeynet/conpot.svg)](https://hub.docker.com/r/honeynet/conpot)
 
 #### Via a pre-built image
 
@@ -36,7 +36,7 @@ Navigate to ``http://MY_IP_ADDRESS`` to confirm the setup.
 1. Install [Docker](https://docs.docker.com/engine/installation/)
 2. Clone this repo with `git clone https://github.com/mushorg/conpot.git` and `cd conpot/docker`
 3. Run `docker build -t conpot .`
-4. Run `docker run -it -p 80:8800 -p 102:10201 -p 502:5020 -p 161:16100/udp -p 47808:47808 -p 623:6230 -p 21:2121 -p 69:6969/udp --network=bridge conpot`
+4. Run `docker run -it -p 80:8800 -p 102:10201 -p 502:5020 -p 161:16100/udp -p 47808:47808 -p 623:6230 -p 21:2121 -p 69:6969/udp -p 44818:44818 --network=bridge conpot`
 
 Navigate to `http://MY_IP_ADDRESS` to confirm the setup. 
 
