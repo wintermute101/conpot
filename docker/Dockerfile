@@ -1,5 +1,9 @@
 FROM alpine:3.8 as conpot-builder
 
+ENV http_proxy=http://sproxy-de.corp.vattenfall.com:8086
+ENV https_proxy=http://sproxy-de.corp.vattenfall.com:8086
+ENV no_proxy=127.0.0.1
+
 # Install dependencies
 RUN apk add --no-cache ipmitool tcpdump git python3-dev build-base wget py-cffi libxslt-dev openssl-dev
 
@@ -31,6 +35,10 @@ RUN tar -zcf conpot.tgz .local
 FROM alpine:3.8
 
 USER root
+
+ENV http_proxy=http://sproxy-de.corp.vattenfall.com:8086
+ENV https_proxy=http://sproxy-de.corp.vattenfall.com:8086
+ENV no_proxy=127.0.0.1
 
 RUN apk add --no-cache ipmitool ca-certificates tcpdump python3 wget py-cffi libxslt openssl
 
