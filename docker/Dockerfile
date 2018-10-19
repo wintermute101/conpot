@@ -27,7 +27,7 @@ RUN python3 setup.py install --user --prefix=
 ENV PATH=$PATH:/home/conpot/.local/bin
 RUN py.test -v
 
-RUN pip3 uninstall -y setuptools pytest freezgun
+RUN pip3 uninstall -y setuptools
 
 WORKDIR /home/conpot
 RUN tar -zcf conpot.tgz .local
